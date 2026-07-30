@@ -1,13 +1,13 @@
 [package]
-name = "garni-rs"
+name = "prometheus_garni_exporter"
 version = "0.1.0"
 edition = "2024"
 description = "Small server for listening for updates from Garni meteo station and exposing to prometheus."
 license = "Apache-2.0"
 readme = "Readme.md"
 keywords = ["prometheus", "meteo", "station"]
-homepage = "https://github.com/psiska/garni-rs"
-repository = "https://github.com/psiska/garni-rs"
+homepage = "https://github.com/psiska/prometheus-garni-exporter"
+repository = "https://github.com/psiska/prometheus-garni-exporter"
 
 exclude = ["*.nix", "flake.lock", "nix/*", ".github/*", ".gitignore", ".envrc"]
 

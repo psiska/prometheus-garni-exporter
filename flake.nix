@@ -1,5 +1,5 @@
 {
-  description = "Nix Flake for garni-rs - local weather server to collect metrics from weather station and expose them to prometheus.";
+  description = "Nix Flake for garni - local weather server to collect metrics from weather station and expose them to prometheus.";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -33,18 +33,18 @@
           ];
           # Add your devShell tools here
           packages = with pkgs; [
-            self'.packages.garni-rs
+            self'.packages.prometheus_garni_exporter
             jq
             nixpkgs-fmt
           ];
         };
         #        devShells.default = self'.devShells.rust;
-        packages.default = self'.packages.garni-rs;
+        packages.default = self'.packages.prometheus_garni_exporter;
       };
 
       flake.nixosModules.default = { pkgs, ... }: {
         imports = [ ./nix/nixos-module.nix ];
-        services.garni-rs.package = withSystem pkgs.stdenv.hostPlatform.system (
+        services.prometheus.exporters.garni.package = withSystem pkgs.stdenv.hostPlatform.system (
           { config, ... }: config.packages.default
         );
       };
