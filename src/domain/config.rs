@@ -368,7 +368,7 @@ pub(crate) const ALL_PARAM: &'static [PrometheusParam] = &[
     },
     // Channel 8
     PrometheusParam {
-        name: "garni_weather_temp_channel_*_in_F",
+        name: "garni_weather_temp_channel_8_in_F",
         from_field: &Field::TempF(Channel::Channel8),
         help: "Temperature in F Channel 8",
         p_type: &MetricsType::Gauge,
